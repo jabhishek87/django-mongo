@@ -2,8 +2,10 @@ import json
 from django.views.generic import View
 from django.core import serializers
 from django.http import HttpResponse
+from django.core.urlresolvers import RegexURLPattern, RegexURLResolver
 from voterx_app.patch import JsonResponse
-from voterx_app import models, exceptions
+from voterx_app.models import models
+from voterx_app import exceptions
 
 def index(request):
     return JsonResponse({"msg":"JsonResponse"})
@@ -58,5 +60,64 @@ class NameView(BaseView):
     model = models.Name
 
 
-class PostView(BaseView):
-    model = models.Post
+class DemographicsView(BaseView):
+    model = models.Demographics
+
+
+class ResidenceView(BaseView):
+    model = models.Residence
+
+
+class PhoneNumberView(BaseView):
+    model = models.PhoneNumber
+
+
+class EmailView(BaseView):
+    model = models.Email
+
+
+class CommercialView(BaseView):
+    model = models.Commercial
+
+
+class PartyView(BaseView):
+    model = models.Party
+
+
+class DistrictView(BaseView):
+    model = models.District
+
+
+class Commercial2View(BaseView):
+    model = models.Commercial2
+
+
+class CommercialfecView(BaseView):
+    model = models.Commercialfec
+
+
+class CommercialinterestsView(BaseView):
+    model = models.Commercialinterests
+
+
+class CommercialhomepurchasingView(BaseView):
+    model = models.Commercialhomepurchasing
+
+
+class VotehistoryView(BaseView):
+    model = models.Votehistory
+
+
+class CsDrtvVoterView(BaseView):
+    model = models.CsDrtvVoter
+
+
+class R7L2VoterView(BaseView):
+    model = models.R7L2Voter
+
+
+class AggregatedVoterView(BaseView):
+    model = models.AggregatedVoter
+
+
+
