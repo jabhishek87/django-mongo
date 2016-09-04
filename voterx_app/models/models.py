@@ -1345,7 +1345,7 @@ class R7L2Voter(models.Model):
     seq = models.FloatField(default=0)
     somedate = models.DateTimeField(default=datetime.utcnow())
     round = models.FloatField(default=0)
-    caller_id = models.FloatField()
+    caller_id = models.FloatField(default=0)
     time_stamp = models.DateTimeField(default=datetime.utcnow())
     poling_result = models.CharField(default='unk')
     sheet = models.CharField(default='unk')
@@ -1354,7 +1354,7 @@ class R7L2Voter(models.Model):
     lalid = models.CharField(default='unk')
     absenteetypes_description = models.CharField(default='unk')
     source = models.CharField(default='none')
-    aggregated_voter = EmbeddedModelField('AggregatedVoter')
+    aggregated_voter = EmbeddedModelField('AggregatedVoter',blank=True, null=True)
     meta = {'allow_inheritance': True}
 
     def as_dict(self):
